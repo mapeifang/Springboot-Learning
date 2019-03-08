@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <script src="jquery-2.1.0.js"></script>
+    <script>
+        $(function () {
+            $("#sub").click(function () {
+                $.ajax({
+                    url:"testController/save_data",
+                    type:"get",
+                    data:{name:$("#content").val()},
+                    success:function (data) {
+                        alert("success!")
+                    }
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+请输入您的姓名：<input type="text" id = "content">&nbsp;<input type="submit" id = "sub">
+</body>
+</html>
